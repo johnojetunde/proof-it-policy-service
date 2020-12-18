@@ -1,4 +1,4 @@
-package com.proofit.policy.app;
+package com.proofit.policy.app.controller;
 
 import com.proofit.policy.app.model.PolicyRequestModel;
 import com.proofit.policy.domain.service.abstracts.PremiumCalculator;
