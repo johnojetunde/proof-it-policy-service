@@ -22,7 +22,7 @@ public class PolicyController {
     private final PremiumCalculator premiumCalculator;
 
     @PostMapping(value = "/calculate-premium", consumes = APPLICATION_JSON_VALUE)
-    public ResponseModel get(@Valid @RequestBody PolicyRequestModel policy) {
+    public ResponseModel calculatePremium(@Valid @RequestBody PolicyRequestModel policy) {
         return new ResponseModel(premiumCalculator.calculate(policy.toModel()));
     }
 
