@@ -20,6 +20,7 @@ public interface RiskTypePremiumCalculator {
     default BigDecimal sumInsuredAmount(List<PolicySubObject> policySubObjectList) {
         return emptyIfNullStream(policySubObjectList)
                 .map(PolicySubObject::getSumInsured)
-                .reduce(BigDecimal::add).orElse(BigDecimal.ZERO);
+                .reduce(BigDecimal::add)
+                .orElse(BigDecimal.ZERO);
     }
 }

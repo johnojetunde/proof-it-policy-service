@@ -9,6 +9,8 @@ import org.springframework.stereotype.Component;
 import java.util.Map;
 import java.util.Optional;
 
+import static java.lang.String.format;
+
 @Component
 public class RiskTypePremiumCalculatorFactory {
 
@@ -20,6 +22,6 @@ public class RiskTypePremiumCalculatorFactory {
 
     public RiskTypePremiumCalculator getRiskCalculator(RiskType riskType) {
         return Optional.ofNullable(riskCalculatorMap.get(riskType))
-                .orElseThrow(() -> new PolicyServiceException("Unable to get risk calculator"));
+                .orElseThrow(() -> new PolicyServiceException(format("Unable to get risk calculator of type %s", riskType)));
     }
 }

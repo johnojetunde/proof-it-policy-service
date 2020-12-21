@@ -23,7 +23,7 @@ class RiskTypePremiumCalculatorFactoryTest {
     void getCalculator_whenNotImplemented() {
         assertThatThrownBy(() -> factory.getRiskCalculator(RiskType.THEFT))
                 .isInstanceOf(PolicyServiceException.class)
-                .hasMessage("Unable to get risk calculator");
+                .hasMessage("Unable to get risk calculator of type THEFT");
     }
 
     @Test
